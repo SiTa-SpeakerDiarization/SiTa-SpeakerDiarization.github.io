@@ -84,13 +84,13 @@ function StaticSection() {
           </li>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YouTube videos were curated and
           downloaded based on specific search queries and after
-          <hr />
+          <hr className="mt-3 mb-3" />
           <li>
             <strong>Pyannote 3.1 :</strong>
           </li>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A pre-trained Pyannote speaker
           diarization model was used to approxmiate generate speaker labels.
-          <hr />
+          <hr className="mt-3 mb-3" />
           <li>
             <strong>VIA :</strong>
           </li>
