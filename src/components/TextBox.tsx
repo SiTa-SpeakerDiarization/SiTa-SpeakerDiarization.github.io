@@ -53,8 +53,13 @@ function TextBox({ icon, imageUrl, text }: TextBoxProps) {
   return (
     <motion.div
       ref={targetRef1}
-      className="bg-emerald-950 sticky w-60 h-40 rounded-lg flex items-center justify-center"
-      style={{ scale: scale1, x: x1 }}
+      className="sticky w-60 h-40 rounded-lg flex items-center justify-center"
+      style={{
+        scale: scale1,
+        x: x1,
+        backgroundColor: "#00242C",
+        boxShadow: "0px 0px 5px rgba(0, 255, 0, 0.5)",
+      }}
     >
       <motion.div className="icon-text-container flex items-center">
         {!isInView && (
@@ -74,12 +79,20 @@ function TextBox({ icon, imageUrl, text }: TextBoxProps) {
         )}
 
         {isInView && (
-          <motion.p
-            className="text-white text-center"
-            style={{ opacity: opacity }}
-          >
-            {text}
-          </motion.p>
+          <div className="bg-blue-500 w-full h-full">
+            <motion.h2
+              className="text-white text-center"
+              style={{ opacity: opacity }}
+            >
+              {text}
+            </motion.h2>
+            <motion.p
+              className="text-white text-center"
+              style={{ opacity: opacity }}
+            >
+              khkhkhkhkhkhkjhkjhhkjhkhkjhkhjhkhhjkhkjhkkjhkj
+            </motion.p>
+          </div>
         )}
       </motion.div>
     </motion.div>
