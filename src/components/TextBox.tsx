@@ -4,10 +4,11 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 interface TextBoxProps {
   icon?: React.ReactNode; // For passing React icons
   imageUrl?: string; // For passing image URLs
+  title: string;
   text: string;
 }
 
-function TextBox({ icon, imageUrl, text }: TextBoxProps) {
+function TextBox({ icon, imageUrl, title, text }: TextBoxProps) {
   const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 0;
   const centerX = viewportWidth / 3 + 60;
 
@@ -61,10 +62,11 @@ function TextBox({ icon, imageUrl, text }: TextBoxProps) {
         boxShadow: "0px 0px 5px rgba(0, 255, 0, 0.5)",
       }}
     >
-      <motion.div className="icon-text-container flex items-center">
+      {/* Content Inside the Green Box */}
+      <motion.div className="w-full h-full flex flex-col items-center justify-center">
         {!isInView && (
           <motion.div
-            className="icon-container w-44 h-24  flex items-center justify-center"
+            className="icon-container w-44 h-24 flex items-center justify-center"
             style={{ opacity: iconOpacity }}
           >
             {icon ||
@@ -79,20 +81,19 @@ function TextBox({ icon, imageUrl, text }: TextBoxProps) {
         )}
 
         {isInView && (
-          <div className="bg-blue-500 w-full h-full">
-            <motion.h2
-              className="text-white text-center"
-              style={{ opacity: opacity }}
-            >
-              {text}
+          <motion.div
+            className=" w-full h-full flex flex-col items-center justify-center rounded-lg"
+            style={{
+              opacity: opacity,
+            }}
+          >
+            <motion.h2 className="text-white text-center max-w-full text-md mb-2">
+              {title}
             </motion.h2>
-            <motion.p
-              className="text-white text-center"
-              style={{ opacity: opacity }}
-            >
-              khkhkhkhkhkhkjhkjhhkjhkhkjhkhjhkhhjkhkjhkkjhkj
+            <motion.p className="text-center max-w-full text-[10px] text-gray-500 px-2">
+              {text}
             </motion.p>
-          </div>
+          </motion.div>
         )}
       </motion.div>
     </motion.div>

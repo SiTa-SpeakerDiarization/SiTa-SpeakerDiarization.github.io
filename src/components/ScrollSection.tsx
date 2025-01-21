@@ -4,8 +4,8 @@ import { useScroll, useSpring, MotionValue } from "motion/react";
 import { FaYoutube } from "react-icons/fa";
 import { GiRotaryPhone } from "react-icons/gi";
 import { SiMusicbrainz } from "react-icons/si";
+import { MdGTranslate } from "react-icons/md";
 import image from "../assets/sinhala-tamil.webp";
-import phone_conversation_image from "../assets/phone_conversation.jpg";
 
 function ScrollSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -472,17 +472,29 @@ function ScrollSection() {
       >
         <TextBox
           icon={<GiRotaryPhone size={84} color="white" />}
-          text="Welcome Home!"
+          title="Telephone Conversations"
+          text="In the early 2000s, telephone conversations were a primary source for speech dataset creation. Additionally, TV shows and movies also contributed significantly to the collection of speech data."
         />
         <TextBox
           icon={<FaYoutube size={84} color="white" />}
-          text="Welcome Home!"
+          title="Advent of YouTube"
+          text="With its rise in popularity during the 2010s, YouTube became a vast repository for audio and video data. Unlike earlier sources, this data was more diverse, unstructured, and natural."
         />
         <TextBox
           icon={<SiMusicbrainz size={84} color="white" />}
-          text="Welcome Home!"
+          title="Semi-Automatic Annotation"
+          text="Manual annotation, particularly along audio timelines, is a tedious process. The introduction of semi-automatic annotation tools significantly sped up and streamlined this process."
         />
-        <TextBox imageUrl={image} text="Hello World!" />
+        <TextBox
+          icon={<MdGTranslate size={84} color="white" />}
+          title="Multilingual Diarization"
+          text="While English led the way in diarization research, other languages soon followed suit. Notable efforts have been made for languages like Chinese, French, Japanese, Spanish, Korean, and German."
+        />
+        <TextBox
+          imageUrl={image}
+          title="Sinhala & Tamil Diarization"
+          text="Compared to prominent languages, Sinhala and Tamil remain underrepresented in diarization research. While many global initiatives focus on other languages, efforts for these two are minimal and urgently needed."
+        />
       </div>
     </div>
   );
