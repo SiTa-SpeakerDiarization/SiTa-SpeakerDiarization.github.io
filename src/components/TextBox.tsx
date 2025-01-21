@@ -1,8 +1,13 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import image from "../assets/sinhala-tamil.webp";
 
-function TextBox() {
+interface TextBoxProps {
+  icon?: React.ReactNode; // For passing React icons
+  imageUrl?: string; // For passing image URLs
+  text: string;
+}
+
+function TextBox({ icon, imageUrl, text }: TextBoxProps) {
   const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 0;
   const centerX = viewportWidth / 3 + 60;
 
@@ -54,14 +59,17 @@ function TextBox() {
       <motion.div className="icon-text-container flex items-center">
         {!isInView && (
           <motion.div
-            className="icon-container w-44 h-44 rounded-full flex items-center justify-center"
+            className="icon-container w-44 h-24  flex items-center justify-center"
             style={{ opacity: iconOpacity }}
           >
-            <img
-              src={image}
-              alt="Sinhala Tamil Icon"
-              className="w-full h-full object-contain"
-            />
+            {icon ||
+              (imageUrl && (
+                <img
+                  src={imageUrl}
+                  alt="Icon"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              ))}
           </motion.div>
         )}
 
@@ -70,7 +78,7 @@ function TextBox() {
             className="text-white text-center"
             style={{ opacity: opacity }}
           >
-            Hello World
+            {text}
           </motion.p>
         )}
       </motion.div>

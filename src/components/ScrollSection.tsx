@@ -1,6 +1,11 @@
 import { useRef, useEffect } from "react";
 import TextBox from "./TextBox";
 import { useScroll, useSpring, MotionValue } from "motion/react";
+import { FaYoutube } from "react-icons/fa";
+import { GiRotaryPhone } from "react-icons/gi";
+import { SiMusicbrainz } from "react-icons/si";
+import image from "../assets/sinhala-tamil.webp";
+import phone_conversation_image from "../assets/phone_conversation.jpg";
 
 function ScrollSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -465,9 +470,10 @@ function ScrollSection() {
         ref={targetRef}
         className="absolute bg-transparent top-0 z-10 w-full flex items-start flex-col justify-evenly gap-60 pl-20 pt-96 pb-96"
       >
-        <TextBox />
-        <TextBox />
-        <TextBox />
+        <TextBox icon={<GiRotaryPhone size={84} />} text="Welcome Home!" />
+        <TextBox icon={<FaYoutube size={84} />} text="Welcome Home!" />
+        <TextBox icon={<SiMusicbrainz size={84} />} text="Welcome Home!" />
+        <TextBox imageUrl={image} text="Hello World!" />
       </div>
     </div>
   );
