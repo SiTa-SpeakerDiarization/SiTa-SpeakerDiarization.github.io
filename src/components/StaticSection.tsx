@@ -163,7 +163,7 @@ function StaticSection() {
 
       {/* Conference & Workshop Information */}
       <div
-        className=" p-6 rounded-lg shadow-md mb-8 w-full max-w-4xl"
+        className="p-6 rounded-lg shadow-md mb-8 w-full max-w-4xl"
         style={{ backgroundColor: "#00363d" }}
       >
         <h2 className="text-green-400 text-2xl font-bold mb-4">
@@ -179,6 +179,19 @@ function StaticSection() {
             Asian Languages
           </li>
         </ul>
+
+        {/* YouTube Video Embed */}
+        <div className="mt-6">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/1OjIWyd2D7U"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       {/* Dataset Access & License */}
